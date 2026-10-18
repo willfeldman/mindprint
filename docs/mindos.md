@@ -2,7 +2,7 @@
 
 mindOS is a personal workspace application built around the requesting person's own working patterns. Choose web, macOS, or iOS. It is not a device operating system or a claim to recreate a mind.
 
-Use [the create-mindos skill](../skills/create-mindos/SKILL.md) with a coding agent, or use the website's guided builder. If you have no profile, copy or download the creation prompt and send it to your AI. The AI conducts the interview/evidence workflow; review and correct its output, then bring the finished MINDPRINT.md back to the website. The website does not collect questionnaire answers or generate profiles.
+Use [the create-mindos skill](../skills/create-mindos/SKILL.md) with a coding agent, or use the website's guided builder. If you have no profile, copy or download the creation prompt and send it to your AI. The prompt links to the maintained [creation skill](../SKILL.md) and asks the agent to read its referenced files. Agents without GitHub access can request the self-contained START-HERE.md workflow. The AI conducts the interview/evidence workflow; review and correct its output, then bring the finished MINDPRINT.md back to the website. The website does not collect questionnaire answers or generate profiles.
 
 ## The method
 
