@@ -45,3 +45,7 @@ The canonical-document validator is deliberately limited: it does not infer whet
 - Original upstream source links verified; OpenAI Build Web Apps selected for the web target.
 - Lovable URL format verified against its official Build with URL documentation. No third-party app was actually built, no login performed, and no private profile sent during testing.
 - No native app compilation is claimed: this addition provides platform-aware handoff prompts and a design/build skill.
+
+### AI-only profile creation update
+
+Removed the five-question browser form and all local profile-generation code. The create path now offers the full AI prompt with send/review/import instructions. Browser verification confirmed no visible answer fields on that path, prompt asset availability, and successful imported-profile-to-mindOS handoff. The prior questionnaire checks above describe the superseded version.
