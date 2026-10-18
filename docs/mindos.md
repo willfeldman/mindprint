@@ -19,7 +19,6 @@ Someone who likes comparing alternatives might need a comparison workspace. Some
 - [OpenAI Build Web Apps](https://github.com/openai/plugins/tree/main/plugins/build-web-apps): the official OpenAI web app building plugin.
 - [OpenAI Build macOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-macos-apps).
 - [OpenAI Build iOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-ios-apps).
-- [Emil Kowalski's apple-design](https://github.com/emilkowalski/skills/tree/main/skills/apple-design): independently authored, not an Apple product.
 
 Links were verified October 17, 2026. These skills are not copied into MINDPRINT. Their own licenses and installation requirements apply. An agent without these integrations can use equivalent tools or return a clearly labeled implementation brief.
 

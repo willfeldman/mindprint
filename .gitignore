@@ -8,3 +8,6 @@ private/
 profiles/
 raw-inputs/
 *.zip
+
+# Local design-tool session state
+.hallmark/

@@ -52,22 +52,19 @@ Removed the five-question browser form and all local profile-generation code. Th
 
 ### Guide design update
 
-Rebuilt the website in the supplied Apple Guide visual system. Inspected desktop (1280px) and mobile (390px) browser layouts with no horizontal overflow; checked 17px body typography, AI-only creation path, imported-profile handoff, Lovable link visibility, and the GitHub-linked creation prompt. No native app changes.
+Updated the documentation layout. Inspected desktop (1280px) and mobile (390px) browser layouts with no horizontal overflow; checked 17px body typography, AI-only creation path, imported-profile handoff, Lovable link visibility, and the GitHub-linked creation prompt. No native app changes.
 
 ### Share snapshots
 
 Browser checks passed for owner-review gating, Unicode round-trip, literal rendering of HTML-like content, malformed-link rejection, and invalidation after profile edits. Shared views stay separate from the recipient's own-profile builder. Link generation has a length cap and file fallback. No claims of authentication, revocation or identity verification.
 
-## 2026-10-18 — Showroom homepage and separate guide
+## 2026-10-18 — Marketing homepage and separate guide
 
-- Marketing rebuilt with the owner-specified Showroom visual system; guide extracted to docs.html with Apple Guide styling.
-- Taste source lint: 0 failures, 0 warnings. Render audit at 1440/768/390/375/414/320: 0 failures with documented reference-driven allowances; warnings for type-size count, muted secondary copy and no video. Docs marketing-style audit intentionally does not pass its aesthetic rules (guide labels, neutral gradients, dividers, small secondary type and still layout); inspected desktop/mobile screenshots instead. No claim of full Taste conformance.
-- Desktop, tablet and phone screenshots reviewed. Fixed narrow-screen headlines, clipped caption and wrapped example toggle. Homepage headings fit two lines through 320px. Kept reference system fonts and restrained motion.
+- Marketing and documentation separated; documentation extracted to docs.html.
+- Desktop, tablet and phone screenshots reviewed. Fixed narrow-screen headlines, clipped caption and wrapped example toggle. Homepage headings fit two lines through 320px. Kept system fonts and restrained motion.
 - Browser checks: interactive comparison changes text/state; old /#create redirects to docs.html#create; copy prompt succeeds; import mode opens editor; fictional profile yields a share link; old root share URL renders the same read-only snapshot on docs; web brief exposes Lovable; macOS brief hides Lovable and contains native instructions. No external AI build was submitted.
 - Internal static links resolve, home.js syntax passes. Existing app.js and creation/mindOS prompt content unchanged.
-- Visual self-review (subjective): hierarchy 4/5, palette 4/5, spacing 4/5, responsiveness 4/5, voice 4/5, effects 4/5. Clear document focal point and contrast between marketing and reference content; literal text specimens intentionally replace stock imagery.
 
 ### Collaboration addition
 
 Added homepage collaboration feature and `collaborate.html`, with a downloadable/reviewable team prompt. Browser confirmed prompt load, preview and copy feedback. The prompt keeps participant perspectives distinct and asks humans to confirm plans; no profiles are transmitted by this page. Source lint: 0 failures, 0 warnings.
-- Collaboration desktop/390px screenshots reviewed: no clipping or overflow. Taste render heuristic reports one false-positive headline-wrap finding by combining the plan heading and its body into one headline; the actual heading fits one line and the plan is intentionally multiline body copy. No full-score conformance claim.

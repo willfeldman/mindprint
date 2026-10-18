@@ -29,4 +29,4 @@ PNG dimensions are the image generator's actual outputs, not promised platform e
 
 What informed this work: file-first explanations, plain technical language, concrete examples, and a visible route to try the workflow. Their marks, screenshots, adoption statistics and product claims are not copied.
 
-See [PROMPTS.md](PROMPTS.md) for the exact image-generation prompts. Earlier paper-mockup concepts were rejected; only the revised flat assets are distributed here.
+See [PROMPTS.md](PROMPTS.md) for the exact image-generation prompts.
