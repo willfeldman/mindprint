@@ -17,6 +17,7 @@ Someone who likes comparing alternatives might need a comparison workspace. Some
 ## Original upstream projects
 
 - [OpenAI Build Web Apps](https://github.com/openai/plugins/tree/main/plugins/build-web-apps): the official OpenAI web app building plugin.
+- [Emil Kowalski's apple-design](https://github.com/emilkowalski/skills/tree/main/skills/apple-design): independently authored, not an Apple product.
 - [OpenAI Build macOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-macos-apps).
 - [OpenAI Build iOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-ios-apps).
 
