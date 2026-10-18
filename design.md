@@ -32,3 +32,7 @@ The guide retains its existing stylesheet and application logic. Marketing does 
 The owner's two design references take precedence over random direction slots. We intentionally retain system typography, 56px desktop headline, blue actions, light/dark section bands and restrained motion. No generic water photographs, unrelated stock imagery or video added to satisfy an image/motion quota. Real text-based product specimens carry the visuals. Scripted examples are labeled. Inspector allowances: `eyebrow` (announcement/product labels), `few-pictures`, `focal-point` (reference type scale), `still-page` (restrained motion). Documentation is a reference-driven reading surface, not a marketing-page Taste audit target.
 
 Neither upstream skill is vendored. Private Claude share tokens and task identifiers are excluded from published source.
+
+## Collaboration
+
+`website/collaborate.html` is a marketing subpage in the Showroom family. It explains multi-profile collaboration through a contrasting-preferences example, four use cases, and a three-step handoff. The homepage links to it in navigation and a dedicated feature section. A reviewable, copyable Markdown team prompt helps people use their existing AI tool. It does not imply a hosted multiplayer chat, synchronized profiles, access to teammates' histories, impersonation, or delegated approval.

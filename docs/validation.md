@@ -66,3 +66,8 @@ Browser checks passed for owner-review gating, Unicode round-trip, literal rende
 - Browser checks: interactive comparison changes text/state; old /#create redirects to docs.html#create; copy prompt succeeds; import mode opens editor; fictional profile yields a share link; old root share URL renders the same read-only snapshot on docs; web brief exposes Lovable; macOS brief hides Lovable and contains native instructions. No external AI build was submitted.
 - Internal static links resolve, home.js syntax passes. Existing app.js and creation/mindOS prompt content unchanged.
 - Visual self-review (subjective): hierarchy 4/5, palette 4/5, spacing 4/5, responsiveness 4/5, voice 4/5, effects 4/5. Clear document focal point and contrast between marketing and reference content; literal text specimens intentionally replace stock imagery.
+
+### Collaboration addition
+
+Added homepage collaboration feature and `collaborate.html`, with a downloadable/reviewable team prompt. Browser confirmed prompt load, preview and copy feedback. The prompt keeps participant perspectives distinct and asks humans to confirm plans; no profiles are transmitted by this page. Source lint: 0 failures, 0 warnings.
+- Collaboration desktop/390px screenshots reviewed: no clipping or overflow. Taste render heuristic reports one false-positive headline-wrap finding by combining the plan heading and its body into one headline; the actual heading fits one line and the plan is intentionally multiline body copy. No full-score conformance claim.
