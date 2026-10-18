@@ -47,9 +47,9 @@ Ask the owner to choose web, macOS or iOS before implementation. Preserve their 
 | --- | --- | --- |
 | macOS | [OpenAI Build macOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-macos-apps) | Use the relevant native app design, build/run and verification skills. |
 | iOS | [OpenAI Build iOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-ios-apps) | Use the relevant SwiftUI, simulator, accessibility and device workflows. |
-| Web | [OpenAI Build Web Apps](https://github.com/openai/plugins/tree/main/plugins/build-web-apps) | Public web-building alternative; use the installed Build Web Page integration if available. These are not claimed to be the same plugin. |
+| Web | [OpenAI Build Web Apps](https://github.com/openai/plugins/tree/main/plugins/build-web-apps) | Use the original frontend build and browser verification skills. |
 | Interaction design | [Emil Kowalski's apple-design](https://github.com/emilkowalski/skills/tree/main/skills/apple-design) | Read the original skill when relevant. This is independent work, not an Apple or OpenAI skill. |
 
-The exact bundled Build Web Page integration has no verified public source here. Do not invent a source URL for it. The public alternatives above are linked rather than bundled. Follow each upstream's current license and host installation requirements. Do not silently install software.
+The original projects above are linked rather than bundled. Follow each upstream's current license and host installation requirements. Do not silently install software.
 
 Lovable is a web handoff, not a native iOS/macOS builder. For native targets, copy the prompt to a capable coding agent. If the host cannot open links or compile Apple apps, use available equivalents or provide a platform specification/source with clear unverified build status. A text-only agent can produce a brief, but must not call that a working application. No upstream plugin is a mandatory dependency of the core MINDPRINT-to-design method.

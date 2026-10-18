@@ -42,6 +42,6 @@ The canonical-document validator is deliberately limited: it does not infer whet
 - Existing 19 Python tests pass; create-mindos frontmatter validates; browser JavaScript parses.
 - Browser-exercised self-report draft, own-profile gate, web prompt round-trip URL encoding, iOS/macOS routing, profile/platform review reset, and long-prompt fallback: pass.
 - Rendered desktop and 390px mobile layouts inspected; no horizontal page overflow at either checked viewport.
-- Original upstream source links verified; bundled Build Web Page is explicitly distinguished from public Build Web Apps.
+- Original upstream source links verified; OpenAI Build Web Apps selected for the web target.
 - Lovable URL format verified against its official Build with URL documentation. No third-party app was actually built, no login performed, and no private profile sent during testing.
 - No native app compilation is claimed: this addition provides platform-aware handoff prompts and a design/build skill.
