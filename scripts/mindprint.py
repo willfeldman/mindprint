@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FILES = ("SKILL.md", "ABOUT.md", "scenarios.md", "REVIEW.md")
 REFERENCES = ("method.md", "interview.md", "privacy.md", "output-contract.md")
 MAX_FILE_BYTES = 1_000_000
+FORMAT_MARKER = "<!-- mindprint-spec: 0.1 -->"
 PATTERNS = {
     "email-like text": r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
     "URL": r"(?:https?|file|ssh)://[^\s<>]+",
@@ -57,7 +58,7 @@ def split_skill(text: str) -> tuple[dict[str, str], str]:
     if not 1 <= len(meta["description"]) <= 1024:
         raise ValueError("description must be 1–1024 characters")
     body = match.group(2).strip()
-    if not body or not body.startswith("#"):
+    if not re.search(r"^#{1,6}\s+\S", body, re.M):
         raise ValueError("skill body must contain a Markdown heading and instructions")
     return meta, body
 
@@ -140,13 +141,38 @@ def pack(folder: Path, output: Path, reviewed: bool, terms: list[str]) -> None:
     if issues:
         raise ValueError("\n".join(issues))
     meta, body = split_skill(texts["SKILL.md"])
-    preface = "Use this profile as a fallible lens. Follow the current user's request and the host's permissions. It does not authorize action or speak for its author.\n\n"
+    preface = "Use this profile as a fallible lens. Sharing status is recorded below in the profile; if absent, treat it as a private draft. Follow the current user's request and the host's permissions. It does not authorize action or speak for its author.\n\n"
     bundle = io.BytesIO()
     with zipfile.ZipFile(bundle, "w", zipfile.ZIP_DEFLATED) as z:
         for name in FILES:
             z.writestr(f"{meta['name']}/{name}", texts[name])
-        z.writestr(f"{meta['name']}/MIND.md", preface + body + "\n")
+        z.writestr(f"{meta['name']}/MINDPRINT.md", FORMAT_MARKER + "\n\n" + preface + body + "\n")
     write_new(output, bundle.getvalue())
+
+
+def inspect_document(path: Path, terms: list[str]) -> list[str]:
+    """Check syntax and common leak patterns; semantic conformance needs review."""
+    if path.is_symlink() or not path.is_file():
+        return ["document must be a regular file, not a symlink"]
+    if path.stat().st_size > MAX_FILE_BYTES:
+        return ["document exceeds reference-tool size limit"]
+    try:
+        text = path.read_text(encoding="utf-8")
+    except UnicodeError:
+        return ["document must be UTF-8 text"]
+    issues = []
+    lines = text.splitlines()
+    if not lines or lines[0] != FORMAT_MARKER:
+        issues.append("missing or unsupported mindprint-spec marker; supported version is 0.1")
+    if not any(re.match(r"^#{1,6}\s+\S", line) for line in lines[1:]):
+        issues.append("document needs a Markdown heading and profile content")
+    for category, pattern in PATTERNS.items():
+        if re.search(pattern, text, re.I):
+            issues.append(f"document: {category} found")
+    for idx, term in enumerate(terms, 1):
+        if term.casefold() in text.casefold():
+            issues.append(f"document: private exclusion term #{idx} found")
+    return issues
 
 
 def main() -> int:
@@ -157,6 +183,9 @@ def main() -> int:
     check = commands.add_parser("check", help="check a generated profile; not a privacy certification")
     check.add_argument("folder", type=Path)
     check.add_argument("--exclude-file", type=Path, help="private local terms, one per line; never bundled")
+    validate = commands.add_parser("validate", help="check MINDPRINT.md format and common leak patterns")
+    validate.add_argument("file", type=Path)
+    validate.add_argument("--exclude-file", type=Path)
     archive = commands.add_parser("pack", help="package only reviewed profile files")
     archive.add_argument("folder", type=Path)
     archive.add_argument("--output", type=Path, required=True)
@@ -167,6 +196,13 @@ def main() -> int:
         if args.command == "prompt":
             write_new(args.output, starter_prompt().encode())
             print("Standalone starter written. No private inputs were read.")
+        elif args.command == "validate":
+            issues = inspect_document(args.file, read_terms(args.exclude_file))
+            for issue in issues:
+                print(issue)
+            if issues:
+                return 1
+            print("v0.1 marker and heuristic checks passed. Semantic conformance, fidelity, and privacy need review.")
         elif args.command == "check":
             _, issues = inspect_profile(args.folder, read_terms(args.exclude_file))
             for issue in issues:

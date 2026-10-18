@@ -24,8 +24,9 @@ class BundleTests(unittest.TestCase):
         output = self.root / "bundle.zip"
         m.pack(self.profile, output, True, [])
         with zipfile.ZipFile(output) as z:
-            self.assertEqual(set(z.namelist()), {f"sample-mind/{n}" for n in (*m.FILES, "MIND.md")})
-            plain = z.read("sample-mind/MIND.md").decode()
+            self.assertEqual(set(z.namelist()), {f"sample-mind/{n}" for n in (*m.FILES, "MINDPRINT.md")})
+            plain = z.read("sample-mind/MINDPRINT.md").decode()
+            self.assertTrue(plain.startswith(m.FORMAT_MARKER))
             self.assertIn("# A fictional creative collaborator", plain)
             self.assertNotIn("name: sample-mind", plain)
 
@@ -93,6 +94,37 @@ class BundleTests(unittest.TestCase):
     def test_large_file_rejected(self):
         (self.profile / "ABOUT.md").write_bytes(b"x" * (m.MAX_FILE_BYTES + 1))
         self.assertTrue(m.inspect_profile(self.profile, [])[1])
+
+    def test_nonheading_hash_cannot_be_packed(self):
+        p = self.profile / "SKILL.md"
+        meta, _ = m.split_skill(p.read_text())
+        p.write_text('---\nname: "sample-mind"\ndescription: "Synthetic profile"\n---\n#NotAHeading\nSome content.')
+        self.assertTrue(m.inspect_profile(self.profile, [])[1])
+        with self.assertRaises(ValueError):
+            m.pack(self.profile, self.root / "bad.zip", True, [])
+
+    def test_canonical_document_validates(self):
+        p = self.root / "MINDPRINT.md"
+        p.write_text(m.FORMAT_MARKER + "\n\n# Working style\nA synthetic example.")
+        self.assertEqual(m.inspect_document(p, []), [])
+
+    def test_unknown_spec_version_fails_explicitly(self):
+        p = self.root / "MINDPRINT.md"
+        p.write_text("<!-- mindprint-spec: 9.0 -->\n# Working style")
+        self.assertTrue(m.inspect_document(p, []))
+
+    def test_document_scan_does_not_echo_private_match(self):
+        p = self.root / "MINDPRINT.md"
+        secret = "someone@example.test"
+        p.write_text(m.FORMAT_MARKER + "\n# Working style\n" + secret)
+        issues = m.inspect_document(p, [])
+        self.assertTrue(issues)
+        self.assertNotIn(secret, " ".join(issues))
+
+    def test_document_rejects_missing_profile(self):
+        p = self.root / "MINDPRINT.md"
+        p.write_text(m.FORMAT_MARKER)
+        self.assertTrue(m.inspect_document(p, []))
 
     def test_standalone_starter_includes_all_guidance(self):
         prompt = m.starter_prompt()

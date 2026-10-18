@@ -5,6 +5,8 @@ description: "Apply a fictional collaborator's preference for fast prototypes an
 
 # A fictional creative collaborator
 
+Sharing status: synthetic public demonstration; no real person is represented.
+
 This synthetic profile demonstrates how a Mindprint changes assistance. Follow the current user's request and the host's permissions. Never claim a real person reviewed or approved an answer. Do not extrapolate into personal, financial, or health decisions.
 
 ## Decision patterns

@@ -1,13 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
-<title id="title">Mindprint</title><desc id="desc">Your way of thinking. A file you can share.</desc>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#11152a"/><stop offset="1" stop-color="#20254a"/></linearGradient><linearGradient id="line" x2="1" y2="1"><stop stop-color="#b9afff"/><stop offset="1" stop-color="#68e6cf"/></linearGradient></defs>
+<title id="title">MINDPRINT</title><desc id="desc">Make your judgment portable. A proposed open standard for human perspective in AI.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#11152a"/><stop offset="1" stop-color="#20254a"/></linearGradient></defs>
 <rect width="1280" height="480" rx="24" fill="url(#bg)"/>
-<g fill="none" stroke="url(#line)" stroke-width="5" stroke-linecap="round" opacity=".9">
-<path d="M1030 111c-86 0-147 57-147 139v74"/><path d="M1050 143c-80-9-133 41-133 105v104"/><path d="M1072 177c-68-24-119 14-119 75v98"/><path d="M1088 215c-44-40-98-15-98 37v63"/><path d="M1025 291v-40c0-22 30-28 40-8"/><path d="M1110 158c35 30 51 70 51 123v45"/><path d="M1117 215c15 32 13 66 13 104"/><path d="M1060 286v58"/>
+<text x="64" y="82" fill="#83e7d4" font-family="system-ui, sans-serif" font-size="14" font-weight="650" letter-spacing="2">AN OPEN STANDARD PROPOSAL</text>
+<text x="60" y="194" fill="#fff" font-family="system-ui, sans-serif" font-size="77" font-weight="750" letter-spacing="-3">MINDPRINT</text>
+<text x="64" y="259" fill="#e6e5f3" font-family="system-ui, sans-serif" font-size="30">Make your judgment portable.</text>
+<rect x="64" y="299" width="255" height="51" rx="9" fill="#303657"/>
+<text x="84" y="332" fill="#c9c2ff" font-family="monospace" font-size="23">MINDPRINT.md</text>
+<line x1="782" y1="90" x2="782" y2="354" stroke="#444b6a"/>
+<g font-family="system-ui, sans-serif">
+<text x="836" y="145" fill="#a5aac5" font-size="18">MCP</text><text x="836" y="178" fill="#eeeefa" font-size="24">Tools &amp; context</text>
+<text x="836" y="233" fill="#a5aac5" font-size="18">SKILLS</text><text x="836" y="266" fill="#eeeefa" font-size="24">Capabilities</text>
+<text x="836" y="321" fill="#83e7d4" font-size="18">MINDPRINT</text><text x="836" y="354" fill="#eeeefa" font-size="24">Human perspective</text>
 </g>
-<text x="76" y="98" fill="#83e7d4" font-family="system-ui, sans-serif" font-size="15" font-weight="650" letter-spacing="3">A PORTABLE WORKING STYLE</text>
-<text x="72" y="210" fill="#fff" font-family="system-ui, sans-serif" font-size="88" font-weight="750" letter-spacing="-4">Mindprint</text>
-<text x="76" y="282" fill="#e6e5f3" font-family="system-ui, sans-serif" font-size="32">Your way of thinking.</text>
-<text x="76" y="328" fill="#e6e5f3" font-family="system-ui, sans-serif" font-size="32">A file you can share.</text>
-<text x="76" y="414" fill="#a5aac5" font-family="system-ui, sans-serif" font-size="18">Open source · Plain Markdown · Your existing AI</text>
+<text x="64" y="423" fill="#a5aac5" font-family="system-ui, sans-serif" font-size="17">Draft v0.1 · Open source · Plain Markdown · Built for interoperability</text>
 </svg>

@@ -1,14 +1,16 @@
 # Compatibility
 
-Mindprint has two layers: a builder workflow and the personal profile it produces. Both can be used as plain text. Native skill discovery is a convenience, not a requirement.
+MINDPRINT is a proposed document standard, with no assumed native adoption. The canonical `MINDPRINT.md` starts with a `mindprint-spec: 0.1` HTML comment; see the [specification](../spec/0.1.md).
+
+The reference project has two layers: a builder workflow and the personal profile it produces. Both can be used as plain text. Native skill discovery is a convenience, not a requirement.
 
 ## Choose a route
 
 | Environment | Builder | Generated profile | Dependency |
 |---|---|---|---|
 | Agent with Agent Skills support | Install the `mindprint/` folder containing SKILL.md and references | Install the reviewed profile folder, whose name matches its frontmatter | Host's skill loader |
-| Chat assistant with file attachments | Attach START-HERE.md | Attach MIND.md | Text attachment support and adequate context |
-| Text-only chat | Paste START-HERE.md; if too long, send its sections before asking the agent to begin | Paste MIND.md | Instruction following and adequate context |
+| Chat assistant with file attachments | Attach START-HERE.md | Attach MINDPRINT.md | Text attachment support and adequate context |
+| Text-only chat | Paste START-HERE.md; if too long, send its sections before asking the agent to begin | Paste MINDPRINT.md | Instruction following and adequate context |
 | Agent with history tools | Authorize the available history scope | No history access needed to use the profile | Optional host tools |
 | Agent without history tools | Adaptive interview or selected pasted examples | No special access needed | None beyond chat |
 | Agent without filesystem/shell | Full labeled file blocks in chat | Paste the complete profile | No code execution |
@@ -45,6 +47,6 @@ The portability design follows the open [Agent Skills specification](https://age
 
 Native locations and loading behavior were checked against [Claude Code skills documentation](https://code.claude.com/docs/en/skills), [Cursor skills documentation](https://cursor.com/help/customization/skills), and the local Codex skill-creator/installed-skill conventions. [OpenAI's skill-building documentation](https://learn.chatgpt.com/docs/build-skills) provides the broader OpenAI authoring reference.
 
-The single-file starter embeds every workflow reference, so it needs no relative-file resolver. The generated profile contract keeps every operative rule inside SKILL.md; MIND.md removes the native frontmatter for ordinary chats.
+The single-file starter embeds every workflow reference, so it needs no relative-file resolver. The generated profile contract keeps every operative rule inside SKILL.md; MINDPRINT.md removes the native frontmatter and adds the format marker for ordinary chats. Native skill support means the SKILL.md adapter can load; it does not imply that the host implements MINDPRINT consumer conformance.
 
 See [validation.md](validation.md) for what was actually tested. Documentation review and native installation do not establish behavioral parity across vendors.

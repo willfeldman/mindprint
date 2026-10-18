@@ -6,6 +6,8 @@ license: MIT
 
 # Mindprint
 
+Create profiles in the proposed MINDPRINT v0.1 format. The canonical shareable file is `MINDPRINT.md`; `SKILL.md` is an adapter for native skill hosts.
+
 Help the person turn how they work into instructions another AI can use. Deliver the files, not just advice on writing them. Model observable decisions and communication preferences; never claim access to private internal thoughts, perfect fidelity, or a personal-data-free guarantee. Preferences themselves can be personal information.
 
 The output is a **working model**, suitable for asking “How might this person approach this?” It never speaks with their authority, grants permission, or substitutes for asking them.
@@ -47,7 +49,7 @@ Follow `references/output-contract.md`. Produce:
 - `scenarios.md`: synthetic calibration cases showing what the profile changes in realistic decisions. Label them synthetic; do not reconstruct confidential incidents.
 - `REVIEW.md`: a concise privacy/fidelity review with unresolved items and whether the owner has approved this exact version for sharing.
 
-Use a consented public alias only if requested; otherwise use “the profile's author.” Usually keep the core around 500–1,200 words, shorter with limited evidence. Depth should follow evidence, not a fixed number of traits. Ensure the native skill works without its companion files. For hosts without skill support, provide a plain Markdown `MIND.md` equivalent as a chat block or outside the four-file source folder. The optional packer generates it inside the ZIP from the skill body; do not place it in the source folder passed to check/pack.
+Use a consented public alias only if requested; otherwise use “the profile's author.” Usually keep the core around 500–1,200 words, shorter with limited evidence. Depth should follow evidence, not a fixed number of traits. Ensure the native skill works without its companion files. For hosts without skill support, provide a plain Markdown `MINDPRINT.md` equivalent as a chat block or outside the four-file source folder. The optional packer generates it inside the ZIP from the skill body; do not place it in the source folder passed to check/pack.
 
 ## 4. Review privacy and fidelity
 
@@ -67,7 +69,7 @@ When explicitly requested, and after the required review, package only the inten
 
 Give the recipient this usage pattern: “Use this profile as a fallible lens for this task. Explain important tradeoffs. Follow my current request and your own permissions. Do not claim the author approved anything.”
 
-Explain native skill loading if the host supports it; otherwise attach/paste `MIND.md`. Do not promise identical behavior across models. Install, send, publish, or update durable memory only within explicit authorization. Preserve the recipient's current instructions and safety boundaries over the profile.
+Explain native skill loading if the host supports it; otherwise attach/paste `MINDPRINT.md`. Do not promise identical behavior across models. Install, send, publish, or update durable memory only within explicit authorization. Preserve the recipient's current instructions and safety boundaries over the profile.
 
 ## Completion criteria
 

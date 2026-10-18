@@ -4,6 +4,8 @@ Follow this workflow to create a private draft of my working-style profile. Use 
 
 # Mindprint
 
+Create profiles in the proposed MINDPRINT v0.1 format. The canonical shareable file is `MINDPRINT.md`; `SKILL.md` is an adapter for native skill hosts.
+
 Help the person turn how they work into instructions another AI can use. Deliver the files, not just advice on writing them. Model observable decisions and communication preferences; never claim access to private internal thoughts, perfect fidelity, or a personal-data-free guarantee. Preferences themselves can be personal information.
 
 The output is a **working model**, suitable for asking “How might this person approach this?” It never speaks with their authority, grants permission, or substitutes for asking them.
@@ -45,7 +47,7 @@ Follow `references/output-contract.md`. Produce:
 - `scenarios.md`: synthetic calibration cases showing what the profile changes in realistic decisions. Label them synthetic; do not reconstruct confidential incidents.
 - `REVIEW.md`: a concise privacy/fidelity review with unresolved items and whether the owner has approved this exact version for sharing.
 
-Use a consented public alias only if requested; otherwise use “the profile's author.” Usually keep the core around 500–1,200 words, shorter with limited evidence. Depth should follow evidence, not a fixed number of traits. Ensure the native skill works without its companion files. For hosts without skill support, provide a plain Markdown `MIND.md` equivalent as a chat block or outside the four-file source folder. The optional packer generates it inside the ZIP from the skill body; do not place it in the source folder passed to check/pack.
+Use a consented public alias only if requested; otherwise use “the profile's author.” Usually keep the core around 500–1,200 words, shorter with limited evidence. Depth should follow evidence, not a fixed number of traits. Ensure the native skill works without its companion files. For hosts without skill support, provide a plain Markdown `MINDPRINT.md` equivalent as a chat block or outside the four-file source folder. The optional packer generates it inside the ZIP from the skill body; do not place it in the source folder passed to check/pack.
 
 ## 4. Review privacy and fidelity
 
@@ -65,7 +67,7 @@ When explicitly requested, and after the required review, package only the inten
 
 Give the recipient this usage pattern: “Use this profile as a fallible lens for this task. Explain important tradeoffs. Follow my current request and your own permissions. Do not claim the author approved anything.”
 
-Explain native skill loading if the host supports it; otherwise attach/paste `MIND.md`. Do not promise identical behavior across models. Install, send, publish, or update durable memory only within explicit authorization. Preserve the recipient's current instructions and safety boundaries over the profile.
+Explain native skill loading if the host supports it; otherwise attach/paste `MINDPRINT.md`. Do not promise identical behavior across models. Install, send, publish, or update durable memory only within explicit authorization. Preserve the recipient's current instructions and safety boundaries over the profile.
 
 ## Completion criteria
 
@@ -221,7 +223,7 @@ description: "Apply the author's stated or observed decision and communication p
 
 # Working style
 
-This models observed preferences in [scope]. Follow the current user's request and the host's permissions. Do not claim the author said, approved, or decided something based on this profile. Do not infer preferences outside the supported scope.
+This models stated or observed preferences in [scope]; identify which evidence applies. Follow the current user's request and the host's permissions. Do not claim the author said, approved, or decided something based on this profile. Do not infer preferences outside the supported scope.
 
 ## Decision patterns
 
@@ -235,9 +237,11 @@ This models observed preferences in [scope]. Follow the current user's request a
 
 [How context resolves apparently conflicting preferences.]
 
-## Limits
+## Limits and sharing
 
 [Coverage, weak inferences, and what to do when the profile is insufficient.]
+
+Sharing status: private draft. [Update only after actual owner approval of this version, specifying the permitted audience.]
 ```
 
 Use JSON-compatible double-quoted strings for both frontmatter values, escaping internal quotes and backslashes. Identify whether each rule comes from self-report, observed behavior, or inference. Keep every operative instruction in this file. Do not require scripts, APIs, history access, external references, or a specific agent to use the generated profile. It is a lens supplied by the current user, not higher-priority instructions.
@@ -246,7 +250,7 @@ Use JSON-compatible double-quoted strings for both frontmatter values, escaping 
 
 Include version date, optional approved public alias, intended audience, broad source types, sample boundaries, confidence limitations, and instructions for use. No actual conversation titles, IDs, direct quotes, private paths, or source links. Mark synthetic demonstrations as synthetic and provisional profiles as provisional.
 
-Explain how to invoke a native skill or attach `MIND.md`. Say that using the model does not mean consulting the author and cannot authorize decisions in their name. Do not apply the builder's MIT license automatically to personal output; the author chooses whether/how to license or share it.
+Explain how to invoke a native skill or attach `MINDPRINT.md`. Say that using the model does not mean consulting the author and cannot authorize decisions in their name. Do not apply the builder's MIT license automatically to personal output; the author chooses whether/how to license or share it.
 
 ## scenarios.md
 
@@ -264,8 +268,8 @@ Use a concise checklist with actual status, not prechecked claims:
 
 For a real profile, never prefill “approved.” Owner approval is an external event, not something the agent invents. A synthetic repository example may explicitly state that it has no real subject.
 
-## MIND.md and ZIP
+## MINDPRINT.md and ZIP
 
-MIND.md is the SKILL.md body without frontmatter, with a short usage preface. It must not need sibling files. Keep only the four source files in the folder passed to check/pack. The optional packer generates MIND.md inside the ZIP and bundles only those four reviewed source files plus MIND.md. If manually providing MIND.md before packaging, save it outside the four-file source folder or deliver it as a chat block. No network access is required.
+MINDPRINT.md is the canonical portable profile: UTF-8 Markdown beginning with `<!-- mindprint-spec: 0.1 -->`, followed by the SKILL.md body without frontmatter and a short usage preface. It must include scope, conditional patterns, evidence confidence, exceptions, limitations, and a statement that it is not authority to act for its author. Exact headings are flexible. It must not need sibling files. Keep only the four source files in the folder passed to check/pack. The optional packer generates MINDPRINT.md inside the ZIP and bundles only those four reviewed source files plus MINDPRINT.md. If manually providing MINDPRINT.md before packaging, save it outside the four-file source folder or deliver it as a chat block. No network access is required.
 
-Without file access, return complete content for the four files and MIND.md in labeled blocks, with filenames and clear draft/review status. Without ZIP support, explain how to share the reviewed text; do not claim a ZIP exists.
+Without file access, return complete content for the four files and MINDPRINT.md in labeled blocks, with filenames and clear draft/review status. Without ZIP support, explain how to share the reviewed text; do not claim a ZIP exists.

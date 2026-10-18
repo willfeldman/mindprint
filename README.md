@@ -1,19 +1,35 @@
 <p align="center"><img src="assets/banner.svg" alt="Mindprint — Your way of thinking. A file you can share." width="100%"></p>
 
-<p align="center"><strong>Turn your working style into an AI skill your coworkers and friends can use.</strong></p>
-<p align="center">Plain Markdown · Your existing AI · No Mindprint account · MIT licensed</p>
+<p align="center"><strong>MINDPRINT — an open format for human perspective in AI.</strong></p>
+<p align="center">Draft specification v0.1 · Plain Markdown · Agent Skills adapter · MIT</p>
 
-You have a way of making decisions, giving feedback, and explaining things. Most of it lives in conversations.
+**MCP connects tools. Skills package capabilities. MINDPRINT carries perspective.**
 
-**Mindprint helps your AI distill those patterns into a small, readable file.** Share the reviewed version with someone, and they can ask their AI to approach a problem through your lens—without handing over the conversations that shaped it.
+AI can use your tools and follow your workflows. It should also be able to carry the way you frame a problem, weigh tradeoffs, and give feedback—from one assistant to another.
 
-> “Review this plan using my cofounder's Mindprint. What tradeoffs would this profile highlight?”
+**`MINDPRINT.md` makes that perspective portable.** It's a readable model of how someone approaches decisions and communication, distilled from authorized examples or an interview, with private source details removed and the owner in control of sharing.
+
+Give the reviewed file to a coworker or friend. They can ask their AI:
+
+> “Review this plan through my cofounder's Mindprint. What tradeoffs would this profile highlight?”
 >
 > “Give me feedback using my editor's working style.”
->
-> “Use my friend's learning preferences to help me explain this idea.”
 
-It's a model of someone's preferences, not their presence, permission, or approval.
+The file gives the AI a lens. It does not speak for its author or establish their approval.
+
+**This is a proposed standard, not an adopted industry standard.** We are publishing the specification, builder skill, reference tools, and synthetic examples so others can implement it. No affiliation with MCP or Agent Skills is implied.
+
+[Download v0.1](https://github.com/willfeldman/mindprint/releases/tag/v0.1.0) · [Read the v0.1 specification](spec/0.1.md) · [See a MINDPRINT.md](examples/portable/MINDPRINT.md) · [Create yours](START-HERE.md) · [Propose a change](GOVERNANCE.md)
+
+## Three complementary formats
+
+| Format | What it makes portable | Core idea |
+|---|---|---|
+| [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) | Access to external tools and context | What an AI can connect to |
+| [Agent Skills](https://agentskills.io/home) | Specialized knowledge and workflows | How an AI performs a task |
+| **MINDPRINT** *(this draft proposal)* | A person's decision and communication patterns | Which perspective an AI brings to the task |
+
+MINDPRINT is a document format, not a network protocol. It works as ordinary context and can be packaged as a Skill. It requires no MCP server, new model, or dedicated app.
 
 ## Try it in your next chat
 
@@ -31,18 +47,18 @@ Can't attach files? [Open the text](START-HERE.md), copy it, and paste it into y
 
 **Already use agent skills?** Install this repository's `SKILL.md` and `references/` together. [Native installation instructions →](docs/compatibility.md)
 
-## What comes out
+## One canonical file. Optional adapters.
 
 ```text
 my-mind/
-├── SKILL.md       Instructions for skill-compatible agents
-├── MIND.md        The same working model as plain Markdown
+├── MINDPRINT.md   The canonical, self-contained portable profile
+├── SKILL.md       An adapter for skill-compatible agents
 ├── ABOUT.md       Scope, confidence, and limitations
 ├── scenarios.md   Synthetic situations to check the model against
 └── REVIEW.md      Privacy, fidelity, and sharing status
 ```
 
-The AI creates the profile and review files. The optional local packer creates `MIND.md` and an allowlisted ZIP after your review. In chat-only mode, ask the AI for the complete Markdown files directly.
+The shareable format is **MINDPRINT.md**, starting with `<!-- mindprint-spec: 0.1 -->`. The AI creates the profile and review files. The optional local packer creates `MINDPRINT.md` and an allowlisted ZIP after your review. In chat-only mode, ask the AI for the complete Markdown files directly.
 
 [See a complete fictional example →](examples/sample-mind/SKILL.md)
 
@@ -63,14 +79,16 @@ The interesting part is the **when**, the **why**, and the **exception**.
 3. **Remove private details.** It abstracts the useful behavior and leaves source conversations, identities, and confidential context out of the export.
 4. **Try the model.** Synthetic scenarios reveal whether it changes the answer in a useful way—or just sounds flattering.
 5. **You review.** Correct what feels wrong and approve the exact version before it goes to anyone else.
-6. **Share the file.** Your recipient attaches `MIND.md` or installs the skill. Their current instructions still take precedence.
+6. **Share the file.** Your recipient attaches `MINDPRINT.md` or installs the skill. Their current instructions still take precedence.
 
-## Built to travel
+## Implement the standard
+
+A conforming producer creates MINDPRINT.md with scope, conditional rules, evidence confidence, exceptions, uncertainty, authority limits, instruction precedence, and sharing status. A conforming consumer treats it as fallible context and never as approval or authentication. [Full requirements →](spec/0.1.md)
 
 The core workflow and generated profiles are plain text. There is no required model API, memory service, browser extension, or vendor-specific tool.
 
 - **Native skills:** structured for the open [Agent Skills format](https://agentskills.io/specification); setup guidance for Claude Code, Codex, and Cursor.
-- **Other chat assistants:** attach or paste the standalone starter; use the generated `MIND.md` as context.
+- **Other chat assistants:** attach or paste the standalone starter; use the generated `MINDPRINT.md` as context.
 - **Different capabilities:** history, interview, file-writing, and chat-only routes are explicit.
 
 This is format portability, not a claim of identical behavior on every model. The assistant needs to follow instructions and handle the document length. [Compatibility and tested scope →](docs/compatibility.md)
@@ -92,6 +110,9 @@ Python 3.10+; standard library only. These tools do not generate a profile or ca
 ```bash
 # Run from the cloned repository.
 python3 scripts/mindprint.py check /path/to/my-mind
+
+# Check a standalone canonical document (not semantic certification).
+python3 scripts/mindprint.py validate /path/to/MINDPRINT.md
 
 # Optional: local terms that must never appear in the export, one per line.
 # Keep this file outside the profile folder. It is never bundled.
