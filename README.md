@@ -124,19 +124,11 @@ python3 scripts/mindprint.py pack /path/to/my-mind --output my-mind.zip --review
 
 The packer refuses extra files, symlinks, suspicious patterns, and existing output files. The input folder must contain exactly `SKILL.md`, `ABOUT.md`, `scenarios.md`, and `REVIEW.md`; keep raw inputs elsewhere. `--reviewed` is your assertion of approval, not a privacy certificate. [Tool limitations and validation →](docs/validation.md)
 
-## Why I made this
-
-I asked an AI to study our back-and-forth and distill how I frame problems, evaluate evidence, and respond to feedback. The useful result was a set of specific decision rules with exceptions.
-
-Mindprint makes that process reusable: start with evidence, remove private context, test what survives, and let the person correct the result.
-
-— Will Feldman
-
 ## Help make it better
 
 Try it on yourself. Tell us which **synthetic** scenario revealed a weak rule or a portability issue. We welcome better evaluation cases, clearer interviews, and privacy improvements. [Contributing →](CONTRIBUTING.md)
 
-If this is useful, star the repo and send the starter to someone who keeps saying, “That's not quite how I'd approach it.”
+If this is useful, star the repo and share with friends.
 
 [MIT license](LICENSE). The tool's license does not automatically license or make public the profiles you create.
 
@@ -144,6 +136,6 @@ If this is useful, star the repo and send the starter to someone who keeps sayin
 
 ## Build your mindOS
 
-Turn your own MINDPRINT into a personal workspace for **web, macOS, or iOS**. The [create-mindos skill](skills/create-mindos/SKILL.md) maps working habits to a design system and a working app. It links to the original OpenAI platform skills and Emil Kowalski's apple-design rather than copying them.
+Turn your own MINDPRINT into a personal workspace for **web, macOS, or iOS**. The [create-mindos skill](skills/create-mindos/SKILL.md) maps working habits to a design system and a working app.
 
 [How mindOS works](docs/mindos.md) · [Website source](website/)
