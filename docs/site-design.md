@@ -1,7 +1,7 @@
 # Website design
 
-The MINDPRINT website follows the owner's supplied Apple Guide design system: a light reading-first layout, one blue accent, SF Pro system faces with Helvetica fallbacks, an 817px desktop measure and 692px tablet measure, 17px/26px body text, square figures, unfilled sections, hairline dividers, and compact 4px-radius controls. On small screens the hero stacks and the content occupies 87.5% of the viewport.
+The site has two design families. The marketing homepage uses the owner's Apple Homepage / Showroom reference. The documentation and creation workflows use the owner's Apple Guide reference.
 
-The design reference was inspected in its rendered artifact. No Apple logos, product images, proprietary fonts, private artifact contents or share tokens are bundled. The document and workspace illustrations are original MINDPRINT examples.
+See [the design system](../design.md) for the page architecture, tokens, component decisions, upstream Hallmark and Taste Skill links, and explicit adaptations. Both references were inspected through the owner's Claude UI; the homepage artifact itself timed out, so its source task's design-system description was used. The homepage system is an interpretation, not a pixel-exact extraction of Apple.com.
 
-Accessibility adaptations: readable secondary text uses #666 rather than the reference's low-contrast #888; interactive field borders and focus indicators are stronger; primary gradient stops are darker for white-text contrast. The site retains the reference's single blue hue and light theme.
+No Apple logos, proprietary fonts, private artifact contents, share tokens or copied upstream skills are bundled. Original document and workspace examples illustrate MINDPRINT. Shared profile links remain read-only snapshots in URL fragments; existing root hash links redirect to the guide.
