@@ -140,6 +140,8 @@ If this is useful, star the repo and send the starter to someone who keeps sayin
 
 [MIT license](LICENSE). The tool's license does not automatically license or make public the profiles you create.
 
+[Create your MINDPRINT and mindOS](https://mindprint.feldman.chatgpt.site)
+
 ## Build your mindOS
 
 Turn your own MINDPRINT into a personal workspace for **web, macOS, or iOS**. The [create-mindos skill](skills/create-mindos/SKILL.md) maps working habits to a design system and a working app. It links to the original OpenAI platform skills and Emil Kowalski's apple-design rather than copying them.
