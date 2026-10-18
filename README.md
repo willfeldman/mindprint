@@ -146,4 +146,4 @@ Turn your own MINDPRINT into a personal workspace for **web, macOS, or iOS**. Th
 
 Create one `.mindOS` blueprint for web, macOS and iOS with the [builder skill](skills/create-mindos/SKILL.md). The [open format](spec/mindos-0.1.md), [synthetic source](examples/mindos) and `scripts/mindos.py` packer work independently of any hosting provider.
 
-[Try the hosted mindOS library](https://mindos.feldman.chatgpt.site/dashboard) for optional private package storage, a declarative web workspace, shared app data and version-pinned build prompts. Sign in with ChatGPT. The product website and hosted implementation are maintained separately in a private repository; the open format and core creation tools remain here under MIT.
+[Try the hosted mindOS library](https://mindprint.feldman.chatgpt.site/dashboard) for optional private package storage, a declarative web workspace, shared app data and version-pinned build prompts. Sign in with ChatGPT. The product website and hosted implementation are maintained separately in a private repository; the open format and core creation tools remain here under MIT.
