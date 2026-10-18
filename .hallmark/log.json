@@ -1,1 +1,19 @@
-[{"date":"2026-10-18","macrostructure":"Bento Grid","genre":"modern-minimal","theme":"user-supplied Showroom","nav":"inline 44px","footer":"inline compact","scope":"marketing homepage; Apple Guide documentation","notes":"Reference-driven adaptation; see design.md for skill exceptions."}]
+[
+  {
+    "date": "2026-10-18",
+    "macrostructure": "Bento Grid",
+    "genre": "modern-minimal",
+    "theme": "user-supplied Showroom",
+    "nav": "inline 44px",
+    "footer": "inline compact",
+    "scope": "marketing homepage; Apple Guide documentation",
+    "notes": "Reference-driven adaptation; see design.md for skill exceptions."
+  },
+  {
+    "date": "2026-10-18",
+    "macrostructure": "Narrative Workflow",
+    "theme": "user-supplied Showcase",
+    "scope": "marketing homepage and collaboration; docs remain Guide",
+    "notes": "Concrete Markdown specimen, immediate creation prompt, ecosystem explanation, Impeccable refinement."
+  }
+]

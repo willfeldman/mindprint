@@ -64,3 +64,27 @@ Show a synthetic correction, the conditional rule distilled from it, and the exc
 ## Repository description
 
 MINDPRINT: a proposed open standard for portable human perspective in AI. One MINDPRINT.md file. Spec, builder skill, privacy review, and reference tools.
+
+## Revised launch graphics
+
+Use the [brandkit asset pack](../assets/brandkit/README.md). These are launch-ready files, not published social posts.
+
+### Intro post
+
+Your AI knows the task. Does it know how you work?
+
+MINDPRINT.md is a portable guide to how you decide, communicate, and review work. Create it with AI, review what it says, and bring the file to your next conversation.
+
+Open-source draft: https://github.com/willfeldman/mindprint
+
+Image: `assets/brandkit/x-launch.png`
+
+### Collaboration post
+
+One teammate wants evidence. Another learns by trying.
+
+Share your reviewed MINDPRINTs with AI and ask for a workflow that accounts for both. Keep the perspectives distinct. Let the people make the decisions.
+
+https://mindprint.feldman.chatgpt.site/collaborate
+
+Image: `assets/brandkit/x-collaboration.png`

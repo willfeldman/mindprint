@@ -1,7 +1,7 @@
 # Website design
 
-The site has two design families. The marketing homepage uses the owner's Apple Homepage / Showroom reference. The documentation and creation workflows use the owner's Apple Guide reference.
+Marketing uses the owner-selected Apple Product Page / Showcase reference, inspected directly in the supplied artifact. Documentation and creation retain the Apple Guide design.
 
-See [the design system](../design.md) for the page architecture, tokens, component decisions, upstream Hallmark and Taste Skill links, and explicit adaptations. Both references were inspected through the owner's Claude UI; the homepage artifact itself timed out, so its source task's design-system description was used. The homepage system is an interpretation, not a pixel-exact extraction of Apple.com.
+See [the design system](../design.md) for architecture, tokens, source links and adaptations. Hallmark structures the product narrative, Taste informs visual identity, and Impeccable refines typography, contrast and interaction states. Brand assets use the separate Taste brandkit direction.
 
-No Apple logos, proprietary fonts, private artifact contents, share tokens or copied upstream skills are bundled. Original document and workspace examples illustrate MINDPRINT. Shared profile links remain read-only snapshots in URL fragments; existing root hash links redirect to the guide.
+No Apple logos, proprietary fonts, private share tokens or upstream skill copies are bundled. Shared profile links remain read-only snapshots in URL fragments; existing root hash links redirect to the guide.

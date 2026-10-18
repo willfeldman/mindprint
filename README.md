@@ -1,13 +1,13 @@
-<p align="center"><img src="assets/banner.svg" alt="Mindprint — Your way of thinking. A file you can share." width="100%"></p>
+<p align="center"><img src="assets/brandkit/github-cover.png" alt="MINDPRINT — Your judgment, in a file." width="100%"></p>
 
 <p align="center"><strong>MINDPRINT — an open format for human perspective in AI.</strong></p>
 <p align="center">Draft specification v0.1 · Plain Markdown · Agent Skills adapter · MIT</p>
 
 **MCP connects tools. Skills package capabilities. MINDPRINT carries perspective.**
 
-AI can use your tools and follow your workflows. It should also be able to carry the way you frame a problem, weigh tradeoffs, and give feedback—from one assistant to another.
+**MINDPRINT.md is a portable guide to how you decide, communicate, and review work.** Create it with AI from examples you choose to share or a guided interview. Review the patterns, remove private details, and bring the file to your next conversation.
 
-**`MINDPRINT.md` makes that perspective portable.** It's a readable model of how someone approaches decisions and communication, distilled from authorized examples or an interview, with private source details removed and the owner in control of sharing.
+[Create yours](https://mindprint.feldman.chatgpt.site/docs#create) · [See the format](examples/portable/MINDPRINT.md) · [Collaborate with AI](https://mindprint.feldman.chatgpt.site/collaborate) · [Brand assets](assets/brandkit/README.md)
 
 Give the reviewed file to a coworker or friend. They can ask their AI:
 
