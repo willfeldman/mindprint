@@ -9,6 +9,8 @@
 
 [Create yours](https://mindprint.feldman.chatgpt.site/docs#create) · [See the format](examples/portable/MINDPRINT.md) · [Collaborate with AI](https://mindprint.feldman.chatgpt.site/collaborate) · [Brand assets](assets/brandkit/README.md)
 
+[About MINDPRINT](ABOUT.md) · [Instructions for AI agents](AGENTS.md)
+
 Give the reviewed file to a coworker or friend. They can ask their AI:
 
 > “Review this plan through my cofounder's Mindprint. What tradeoffs would this profile highlight?”
