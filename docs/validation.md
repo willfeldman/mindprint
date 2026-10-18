@@ -49,3 +49,7 @@ The canonical-document validator is deliberately limited: it does not infer whet
 ### AI-only profile creation update
 
 Removed the five-question browser form and all local profile-generation code. The create path now offers the full AI prompt with send/review/import instructions. Browser verification confirmed no visible answer fields on that path, prompt asset availability, and successful imported-profile-to-mindOS handoff. The prior questionnaire checks above describe the superseded version.
+
+### Guide design update
+
+Rebuilt the website in the supplied Apple Guide visual system. Inspected desktop (1280px) and mobile (390px) browser layouts with no horizontal overflow; checked 17px body typography, AI-only creation path, imported-profile handoff, Lovable link visibility, and the GitHub-linked creation prompt. No native app changes.
