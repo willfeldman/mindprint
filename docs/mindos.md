@@ -30,3 +30,9 @@ The static site reads imported profiles and prepares mindOS handoff prompts in b
 Copy exports the exact previewed prompt to the clipboard. Open in Lovable puts that prompt, including the profile, in a URL fragment passed to Lovable; it can also remain in browser history. Lovable prefills the prompt and requires the user to click Send. Longer prompts get a copy/download fallback. Native targets offer copy/download to a capable coding agent, not a misleading Lovable native-app button. Provider policies apply after handoff.
 
 A MINDPRINT contains personal preferences even after private source details have been removed. Review it before sharing. This workflow is only for the owner's own profile; it does not authorize building another person's simulation.
+
+## Share a MINDPRINT
+
+Import your own reviewed profile and choose **Share MINDPRINT**. Confirm the version is ready to share, then create and copy its link. Recipients get a read-only view with copy and download controls. The shared profile is not imported as their own identity or used to build their mindOS.
+
+Links carry the full profile in the URL fragment, encoded for transport (not encrypted). Anyone with a link can read and forward it. These are immutable snapshots: edits do not update old links and links cannot be revoked. No server-side profile storage, account, invitation or access control is provided. Link contents can remain in clipboard and browser history. Profiles beyond the 24,000-character URL limit use file sharing instead. Sharing links does not verify authorship. Rendered profile content is plain text, never executable HTML.

@@ -53,3 +53,7 @@ Removed the five-question browser form and all local profile-generation code. Th
 ### Guide design update
 
 Rebuilt the website in the supplied Apple Guide visual system. Inspected desktop (1280px) and mobile (390px) browser layouts with no horizontal overflow; checked 17px body typography, AI-only creation path, imported-profile handoff, Lovable link visibility, and the GitHub-linked creation prompt. No native app changes.
+
+### Share snapshots
+
+Browser checks passed for owner-review gating, Unicode round-trip, literal rendering of HTML-like content, malformed-link rejection, and invalidation after profile edits. Shared views stay separate from the recipient's own-profile builder. Link generation has a length cap and file fallback. No claims of authentication, revocation or identity verification.
