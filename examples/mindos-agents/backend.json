@@ -1,0 +1,5 @@
+{
+  "contract": "mindos-records-v1",
+  "auth": "owner-scoped",
+  "sync": "append-only"
+}

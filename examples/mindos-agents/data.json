@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "collections": [
+    {
+      "id": "decisions",
+      "title": "Decisions",
+      "fields": [
+        {
+          "id": "question",
+          "label": "Decision to make",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "next-step",
+          "label": "Smallest next step",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "reflections",
+      "title": "Reflections",
+      "fields": [
+        {
+          "id": "learning",
+          "label": "What changed your mind?",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -22,7 +22,7 @@ def validate_files(files):
     for v in files.values():
         require(len(v)<=1024*1024,'Entry too large');v.decode('utf-8',errors='strict')
     m=json.loads(files['manifest.json']);obj(m,['format','formatVersion','id','version','name','reviewStatus','files'])
-    require(m['format']=='mindos' and m['formatVersion']=='0.1','Unsupported format')
+    require(m['format']=='mindos' and m['formatVersion'] in ['0.1','0.2'],'Unsupported format')
     require(str(uuid.UUID(m['id']))==m['id'],'Invalid UUID');require(re.fullmatch(r'\d+\.\d+\.\d+',m['version']),'Invalid version');text(m['name'],80)
     require(m['reviewStatus'] in ['draft','reviewed','synthetic'],'Invalid review status')
     require(set(m['files'])==FILES-{'manifest.json'},'Invalid digest list')
@@ -46,10 +46,14 @@ def validate_files(files):
         obj(s,['id','title','collection','kind']);slug(s['id']);text(s['title'],80);require(s['collection'] in ids and s['kind']=='collection','Invalid screen collection')
     unique([s['id'] for s in a['screens']])
     require(json.loads(files['backend.json'])=={'contract':'mindos-records-v1','auth':'owner-scoped','sync':'append-only'},'Unsupported backend')
-    p=json.loads(files['platforms.json']);obj(p,['web','ios','macos'])
-    for v in p.values():
+    p=json.loads(files['platforms.json']);obj(p,['web','ios','macos','agents'] if m['formatVersion']=='0.2' else ['web','ios','macos'])
+    for v in [p[k] for k in ['web','ios','macos']]:
         obj(v,['navigation','typography','components'])
         for x in v.values():text(x,2000)
+    if m['formatVersion']=='0.2':
+        a=p['agents'];obj(a,['protocol','operations','instructions'])
+        require(a['protocol']=='mcp','Unsupported agent protocol');text(a['instructions'],2000)
+        ops=a['operations'];require(isinstance(ops,list) and 1<=len(ops)<=2 and all(x in ['records.read','records.append'] for x in ops),'Invalid agent operations');unique(ops);require('records.read' in ops,'Agent read capability required')
     return m
 
 def validate(blob):

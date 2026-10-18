@@ -32,7 +32,7 @@ When creating profiles, follow the builder's source authorization, privacy, evid
 - `tests/`: Python unit tests for the helper tools.
 - `skills/create-mindos/`: personal workspace builder; upstream platform skills are linked, not copied.
 - Hosted marketing and app source live in a separate private repository. This public repo contains formats, tools, skills and synthetic examples.
-- `spec/mindos-0.1.md`, `scripts/mindos.py`, `examples/mindos/`: portable workspace package format and tools.
+- `spec/mindos-0.2.md`, `scripts/mindos.py`, `examples/mindos/`: portable workspace package format and tools.
 - `design.md`: website design decisions; `assets/brandkit/`: brand assets and usage notes.
 
 ## Making changes
@@ -57,3 +57,5 @@ Inspect the generated file and replace `START-HERE.md` with it. Check relevant s
 For website changes, consult `design.md`. Keep profile creation in the user's AI through the creation prompt, not an on-site questionnaire. Preserve existing documentation links, legacy hash routing, profile import/sharing and mindOS handoffs. Shared profile URLs are unencrypted snapshots, not revocable or synchronized storage. Test affected interactions and responsive rendering.
 
 Keep changes scoped to the request. Do not add personal or machine-specific instructions, credentials, private source URLs or real profiles to commits. Use synthetic fixtures for new tests. Report local checks, commits, pushes and deployments separately; publishing requires authorization from the active user, not this file.
+
+AI agents / MCP is an optional mindOS interface. [Format 0.2](https://github.com/willfeldman/mindprint/blob/main/spec/mindos-0.2.md) declares read/append capabilities; the hosted app requires separate, revocable owner grants. [Synthetic AI-enabled package](https://github.com/willfeldman/mindprint/tree/main/examples/mindos-agents).

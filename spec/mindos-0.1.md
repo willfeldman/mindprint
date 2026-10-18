@@ -43,7 +43,7 @@ The tool hashes package entries and validates structure; it does not certify pri
 
 ## Reference hosted API and limits
 
-Optional hosting: https://mindos.feldman.chatgpt.site/dashboard . Hosting source is private; this specification, examples and tools remain open. ChatGPT Sites provides sign-in and private account storage. A package grants no access to hosted records.
+Optional hosting: https://mindprint.feldman.chatgpt.site/dashboard . Hosting source is private; this specification, examples and tools remain open. ChatGPT Sites provides sign-in and private account storage. A package grants no access to hosted records.
 
 `GET /api/packages` lists owner versions. `POST /api/packages` accepts the archive with `X-Mindos-Reviewed: yes`. `GET /api/packages/{id}?version={version}` returns parsed contents; add `download=1` for the exact archive. `GET/POST /api/data/{id}/{collection}?version={version}` reads/appends records. Errors return JSON `{error}` with non-2xx status. Cross-owner lookups return 404.
 
