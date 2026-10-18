@@ -31,7 +31,8 @@ When creating profiles, follow the builder's source authorization, privacy, evid
 - `scripts/mindprint.py`: optional local validation, checking, prompt generation and packaging.
 - `tests/`: Python unit tests for the helper tools.
 - `skills/create-mindos/`: personal workspace builder; upstream platform skills are linked, not copied.
-- `website/`: static marketing pages, documentation and browser handoff tools.
+- Hosted marketing and app source live in a separate private repository. This public repo contains formats, tools, skills and synthetic examples.
+- `spec/mindos-0.1.md`, `scripts/mindos.py`, `examples/mindos/`: portable workspace package format and tools.
 - `design.md`: website design decisions; `assets/brandkit/`: brand assets and usage notes.
 
 ## Making changes

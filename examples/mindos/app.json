@@ -1,0 +1,16 @@
+{
+  "screens": [
+    {
+      "id": "decisions",
+      "title": "Decisions",
+      "collection": "decisions",
+      "kind": "collection"
+    },
+    {
+      "id": "reflections",
+      "title": "Reflections",
+      "collection": "reflections",
+      "kind": "collection"
+    }
+  ]
+}

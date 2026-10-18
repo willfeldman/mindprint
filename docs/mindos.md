@@ -1,38 +1,13 @@
-# From MINDPRINT to mindOS
+# mindOS: one package, multiple apps
 
-mindOS is a personal workspace application built around the requesting person's own working patterns. Choose web, macOS, or iOS. It is not a device operating system or a claim to recreate a mind.
+A `.mindOS` file is a ZIP containing your reviewed MINDPRINT, design tokens, screens, data contract, native platform mappings and build rationale. It is a portable blueprint, not executable code or a replacement operating system.
 
-Use [the create-mindos skill](../skills/create-mindos/SKILL.md) with a coding agent, or use the website's guided builder. If you have no profile, copy or download the creation prompt and send it to your AI. The prompt links to the maintained [creation skill](../SKILL.md) and asks the agent to read its referenced files. Agents without GitHub access can request the self-contained START-HERE.md workflow. The AI conducts the interview/evidence workflow; review and correct its output, then bring the finished MINDPRINT.md back to the website. The website does not collect questionnaire answers or generate profiles.
+1. Give the [builder skill](../skills/create-mindos/SKILL.md) your own reviewed MINDPRINT.md.
+2. Design the workspace with your AI. Review the eight files defined by the [format](../spec/mindos-0.1.md).
+3. Run `python3 scripts/mindos.py pack package-folder --output workspace.mindOS`, then `python3 scripts/mindos.py validate workspace.mindOS`.
+4. Optionally [open the hosted library](https://mindos.feldman.chatgpt.site/dashboard), sign in with ChatGPT, and upload your package. Open the declarative web workspace or create a build brief for any combination of platforms.
+5. Download the exact package and attach it to your coding agent. Reuse the same backend binding when you build another platform later.
 
-## The method
+The hosted app uses private account storage, immutable package versions, append-only text records, and revocable app-scoped tokens. Hosting limits are shown in the library. Native apps require a separate build and validation. Lovable builds web apps; external web clients need a server-side proxy for app tokens. Never include credentials or live records in the archive.
 
-The originating design session demonstrated an explicit method: turn decision rules into interface rules, derive components from recurring jobs, define semantic tokens, document the choices, and test rendered examples. This workflow generalizes that observable artifact structure. It does not extract hidden reasoning or claim the originating agent's private thought process. The originating profile and private session are not included.
-
-Each design should trace:
-
-**Owner's pattern → need → interaction → component → visual/content rule → scenario check.**
-
-Someone who likes comparing alternatives might need a comparison workspace. Someone who protects attention might prefer a focused queue. Neither should inherit a reference person's fonts, palette or component names simply because that reference worked well.
-
-## Original upstream projects
-
-- [OpenAI Build Web Apps](https://github.com/openai/plugins/tree/main/plugins/build-web-apps): the official OpenAI web app building plugin.
-- [Emil Kowalski's apple-design](https://github.com/emilkowalski/skills/tree/main/skills/apple-design): independently authored, not an Apple product.
-- [OpenAI Build macOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-macos-apps).
-- [OpenAI Build iOS Apps](https://github.com/openai/plugins/tree/main/plugins/build-ios-apps).
-
-Links were verified October 17, 2026. These skills are not copied into MINDPRINT. Their own licenses and installation requirements apply. An agent without these integrations can use equivalent tools or return a clearly labeled implementation brief.
-
-## Website behavior and privacy
-
-The static site reads imported profiles and prepares mindOS handoff prompts in browser memory. It has no profile database, model API, analytics script or account system. Reloading may discard work; download files to keep them. Hosting providers may log normal page requests. The user reviews and attests that the profile is their own before generating a build prompt. This is self-attestation, not identity verification.
-
-Copy exports the exact previewed prompt to the clipboard. Open in Lovable puts that prompt, including the profile, in a URL fragment passed to Lovable; it can also remain in browser history. Lovable prefills the prompt and requires the user to click Send. Longer prompts get a copy/download fallback. Native targets offer copy/download to a capable coding agent, not a misleading Lovable native-app button. Provider policies apply after handoff.
-
-A MINDPRINT contains personal preferences even after private source details have been removed. Review it before sharing. This workflow is only for the owner's own profile; it does not authorize building another person's simulation.
-
-## Share a MINDPRINT
-
-Import your own reviewed profile and choose **Share MINDPRINT**. Confirm the version is ready to share, then create and copy its link. Recipients get a read-only view with copy and download controls. The shared profile is not imported as their own identity or used to build their mindOS.
-
-Links carry the full profile in the URL fragment, encoded for transport (not encrypted). Anyone with a link can read and forward it. These are immutable snapshots: edits do not update old links and links cannot be revoked. No server-side profile storage, account, invitation or access control is provided. Link contents can remain in clipboard and browser history. Profiles beyond the 24,000-character URL limit use file sharing instead. Sharing links does not verify authorship. Rendered profile content is plain text, never executable HTML.
+The format and reference tools work without the hosted service. Use [the synthetic source](../examples/mindos) to try packaging. Structural validation does not establish ownership, privacy, or faithful modeling of a person's preferences.

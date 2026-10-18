@@ -78,3 +78,7 @@ Explain native skill loading if the host supports it; otherwise attach/paste `MI
 - No private source material in the export; owner review status explicit.
 - Works as standalone text; file/tool limitations accurately reported.
 - Usable files or full file blocks delivered; no fabricated validation or publication claims.
+
+## Optional workspace package
+
+After completing and reviewing the owner's MINDPRINT.md, they may choose to build a personal workspace. Use [create-mindos](skills/create-mindos/SKILL.md) to produce the eight-file .mindOS package described in [the format](spec/mindos-0.1.md). Keep profile creation separate from hosting consent. Never upload the profile or package automatically. Optional hosted quick setup is https://mindos.feldman.chatgpt.site/dashboard ; the core profile and package formats remain usable without hosting.

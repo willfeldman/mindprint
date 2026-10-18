@@ -5,7 +5,7 @@ description: Build a personal mindOS workspace and design system from the reques
 
 # Create your mindOS
 
-Turn the owner's working patterns into a usable personal workspace: a web or native application, not a kernel or replacement for a device operating system. The deliverable is working software plus a documented design system. Do not promise a replica of a mind.
+Turn the owner's working patterns into a usable personal workspace: a web or native application, not a kernel or replacement for a device operating system. Start with a portable .mindOS package, then build working software from that same versioned design and data contract. Do not promise a replica of a mind.
 
 ## Own mind only
 
@@ -16,6 +16,16 @@ Proceed only when the requester identifies the MINDPRINT as their own. If owners
 Accept an existing MINDPRINT.md as plain text. If none exists, interview the owner: a recent decision; a correction they often give AI; what evidence changes their mind; how they start ambiguous work; how they review results; what makes an interface distracting; when they stop or defer. Ask for ordinary, non-sensitive examples. Summarize conditional habits and exceptions, then have the owner correct that provisional profile before designing from it. Do not invent traits from missing answers. No chat history or special connector is required.
 
 Use only intentionally supplied or authorized sources. Keep raw conversations, identifiers, confidential work, health information and private examples out of the shared design system. Preferences can still identify a person; never promise anonymity. External services receive only the content the owner chooses to send.
+
+## Package first
+
+Read [the .mindOS 0.1 specification](https://github.com/willfeldman/mindprint/blob/main/spec/mindos-0.1.md) and [synthetic package source](https://github.com/willfeldman/mindprint/tree/main/examples/mindos). Create exactly eight root files: manifest.json, MINDPRINT.md, tokens.json, app.json, data.json, backend.json, platforms.json, README.md. Use the schemas in the specification; do not add extra JSON fields or files. The restricted v0.1 renderer supports text collections; document additional requirements as future work rather than inventing unsupported schema.
+
+Keep the owner's app UUID stable, increment its three-part numeric version when contents change, and mark drafts as draft until reviewed. Preserve the same design tokens, screens, data fields and platform mappings when building later clients. Put design rationale, profile-to-interface traceability, component guidance, acceptance scenarios and exceptions in README.md. Rich design-system notes that do not fit the limited token schema belong there, not in extra archive entries.
+
+Package using `python3 scripts/mindos.py pack package-folder --output workspace.mindOS` from the public repository, then validate it with `python3 scripts/mindos.py validate workspace.mindOS`. Use only the owner's reviewed profile. Do not include credentials, real records, raw chats or source identifiers. The packer computes file hashes; review the exact resulting package before sharing or uploading. If unable to produce a ZIP, provide the eight exact file contents and packaging instructions, clearly stating that no archive was created.
+
+Hosted quick setup: https://mindos.feldman.chatgpt.site/dashboard . The owner signs in with ChatGPT and uploads a reviewed package to their private library. They can open its declarative web workspace, export/download it, or obtain a version-pinned build brief. Hosting is optional; packages remain portable.
 
 ## Translate behavior into design
 
@@ -31,6 +41,10 @@ Use only intentionally supplied or authorized sources. Keep raw conversations, i
 
 ## Deliver
 
+- The validated, reviewed .mindOS archive plus its app ID, exact version and archive SHA-256.
+- A separate backend binding when hosting is configured: origin, appId, packageVersion, packageDigest and contractVersion. Credentials and live records never belong in the package.
+- BUILD-RECEIPT.md alongside each generated app: package digest/version, platform, model/tool versions, pinned dependencies and actual acceptance results. Do not include secrets. Preserve native platform conventions without silently replacing the shared design.
+
 - Working app with setup/run instructions and explicit storage/integration limits.
 - DESIGN-SYSTEM.md: principles, mapping table, token rationale, component contracts, copy, layout, motion and accessibility.
 - Machine-readable semantic tokens and live component previews when the environment supports files/code.
@@ -41,7 +55,7 @@ Use the tools available in the current agent. There is no mandatory provider, AP
 
 ## Platform routing and upstream skills
 
-Ask the owner to choose web, macOS or iOS before implementation. Preserve their decision semantics across platforms, not identical layouts. Consult the original upstream skills when available; do not vendor or reproduce them in the generated skill.
+Allow the owner to choose any combination of web, macOS and iOS, or leave platforms undecided while preparing the shared package. Preserve their decision semantics across platforms, not identical layouts. Consult the original upstream skills when available; do not vendor or reproduce them in the generated skill.
 
 | Target | Original source | Integration behavior |
 | --- | --- | --- |
@@ -53,3 +67,7 @@ Ask the owner to choose web, macOS or iOS before implementation. Preserve their 
 The original projects above are linked rather than bundled. Follow each upstream's current license and host installation requirements. Do not silently install software.
 
 Lovable is a web handoff, not a native iOS/macOS builder. For native targets, copy the prompt to a capable coding agent. If the host cannot open links or compile native apps, use available equivalents or provide a platform specification/source with clear unverified build status. A text-only agent can produce a brief, but must not call that a working application. No upstream plugin is a mandatory dependency of the core MINDPRINT-to-design method.
+
+## Shared data
+
+Generated clients must use the owner's same backend binding. The Sites reference host uses GET/POST `/api/data/{appId}/{collection}?version={packageVersion}`. POST an object of schema-defined text values; GET returns `records`. Sessions authenticate same-origin web views; separate app-scoped tokens authenticate native or server-side clients. Tokens expire after 30 days and can be revoked. Store them in OS Keychain or a server secret store. External browser apps need a server-side proxy; do not embed tokens in frontend code. Honor account limits and error states. Refresh after writes and on foreground; no realtime/offline sync is provided. Schema changes require a new app ID and an explicitly reviewed data migration. Verify two clients see the same synthetic record before claiming shared data works.

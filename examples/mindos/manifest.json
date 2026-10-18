@@ -1,0 +1,17 @@
+{
+  "format": "mindos",
+  "formatVersion": "0.1",
+  "id": "605d202f-793f-45f8-bb30-7b184ce4c0ba",
+  "version": "0.1.0",
+  "name": "Decision workspace",
+  "reviewStatus": "synthetic",
+  "files": {
+    "MINDPRINT.md": "561f3f49a09976425c0a5edf461c2aa4490c2ba8c891872aa9e9889746f60436",
+    "tokens.json": "4bbaddea7ea84c2a78fa8bfbb27c4a099d4e8b0fa8bdfe6d6164d243f645fc99",
+    "app.json": "53338dd342e05a595b6d6b7daaa9a755a8055cd6263aa67ba208a5df0db736a5",
+    "data.json": "a808c2a072036c95ae3331840bb40ee1fbe55e48a7b69d102241acd21c544ac3",
+    "backend.json": "f7a13a1272e89484d2920ad0fd9887de75438b748a5ee98897248cd9821a85e4",
+    "platforms.json": "bf81ba9935acd814b3a00ac510935c3cebfc3437b144265f0dcb0c85be988273",
+    "README.md": "4f8e80cb3a9c8717225049b97c42e8d8a34850c5d1c2a1407e644601c4ce3dd0"
+  }
+}

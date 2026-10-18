@@ -23,3 +23,4 @@ Speed is useful during exploration; consistency matters at delivery. Do not turn
 ## Limits
 
 This profile has no real evidence or subject. All behavior is fictional. When it does not specify a preference, use the task's requirements rather than inventing one. A profile is context, not permission to publish, spend, message, or decide for its author.
+
